@@ -26,7 +26,7 @@ export default function ProductosPage() {
     if (data) {
       setProductos(data);
       setFiltrados(data);
-      const cats = [...new Set(data.map((p: Producto) => p.categoria).filter(Boolean))];
+      const cats = Array.from(new Set(data.map((p: Producto) => p.categoria).filter(Boolean))) as string[];
       setCategorias(cats);
     }
     setLoading(false);
